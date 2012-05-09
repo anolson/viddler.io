@@ -1,4 +1,7 @@
 ViddlerIo::Application.routes.draw do
+  resource :session
+
+  match 'login' => 'sessions#new'
   root :to => 'pages#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.

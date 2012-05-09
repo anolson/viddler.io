@@ -1,0 +1,20 @@
+<div id="login-box">
+  <h2>Login</h2>
+  <div class="well">
+    
+    <%= form_for @user, :url => session_path do |f| %>
+      <%= f.label :username %>
+      <%= f.text_field :username %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <p><%= f.submit "Login", :class => 'btn btn-primary' %></p>
+    <% end %>
+    <small>Use your Viddler username/password.</small>
+  </div>  
+  
+  <% if flash[:alert] %>
+    <div class="alert alert-error"><%= flash[:alert] %></div>
+  <% end %>
+</div>
