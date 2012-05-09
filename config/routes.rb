@@ -1,8 +1,11 @@
 ViddlerIo::Application.routes.draw do
+  resources :videos
   resource :session
 
   match 'login' => 'sessions#new'
+
   root :to => 'pages#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
