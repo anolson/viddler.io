@@ -10,7 +10,12 @@
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-          <a class="brand" href="#">viddler.io</a> 
+          <a class="brand" href="#">viddler.io</a>
+          <ul class="nav">
+            <li><%= link_to "Videos", videos_path %></li>
+            <li><%= link_to "Upload", new_video_path %></li>
+          </ul>
+
         </div>
       </div>
     </div>
