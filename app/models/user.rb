@@ -6,7 +6,7 @@ class User < Model
   def authenticate!(session)
     if valid?
       client.authenticate!(@username, @password)
-      session[:sessionid] = client.sessionid if client.authenticated?
+      session[:viddler_session_id] = client.sessionid if client.authenticated?
     end
   end
   

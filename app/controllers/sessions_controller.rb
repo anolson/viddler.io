@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  
+  skip_before_filter :authenticate
   rescue_from Viddler::ApiException, :with => :force_sign_in
   
   def new
