@@ -1,0 +1,25 @@
+<h2>New video <small>upload a new video</small></h2>  
+
+<div class="well">
+  <%= form_tag @upload.endpoint, :multipart => true do %>
+    <%= hidden_field_tag :token, @upload.token %>
+    
+    <%= hidden_field_tag :callback, videos_url %>
+    
+    <%= label_tag :title %>
+    <%= text_field_tag :title %>
+    
+    <%= label_tag :description %>
+    <%= text_field_tag :description %>
+    
+    <%= label_tag :tags %>
+    <%= text_field_tag :tags %>
+    
+    <%= label_tag :filename %>
+    <%= file_field_tag :filename %>
+    
+    <div class="form-actions">
+      <%= submit_tag "Upload", :class => "btn-primary" %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,12 @@
+<div class="page-header">
+  <h1><%= @video.title %></h1>
+</div>
+
+<div class="well">
+  <%= @video.embed_code.html_safe %>    
+</div>
+
+<h3>Embed code</h3>
+<pre>
+  <%= @video.embed_code %>
+</pre>

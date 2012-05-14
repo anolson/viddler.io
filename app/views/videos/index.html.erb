@@ -1,1 +1,15 @@
-<h1>Yay! Some videos!</h1>
+<div class="row page-header">
+  <h1>Videos</h1>
+</div>
+
+<div class="row">
+  <% if @videos.empty? %>
+    <div class="well span6 offset3 text-center">
+      Looks like you haven't uploaded any videos.
+    </div>
+  <% else %>
+    <ul class="thumbnails">
+      <%= render :partial => 'video', :collection => @videos %>
+    </ul>
+  <% end %>  
+</div>

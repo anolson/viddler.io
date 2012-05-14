@@ -1,0 +1,10 @@
+<li id="video_<%= video.id %>" class="span12">
+  <div class="span4 pull-left thumbnail">
+    <%= link_to image_tag(video.thumbnail), video_path(video.id) %>
+  </div>
+  <div class="span6 pull-left">
+    <h3><%= video.title %></h3>
+    <p><%= video.description %></p>
+    <p><%= link_to "Delete", video_path(video.id), :method => :delete, :remote => true, :confirm => "Are you sure?", :class => "btn btn-danger"%></p>
+  </div>
+</li>
