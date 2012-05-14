@@ -1,0 +1,1 @@
+ViddlerIo::Application.config.viddler_api_key = ENV['VIDDLER_API_KEY']

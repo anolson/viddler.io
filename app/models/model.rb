@@ -21,6 +21,6 @@ class Model
   end
 
   def self.client
-    Viddler::Client.new('1bo1odc4du4nmcp1qx4w')
+    Viddler::Client.new(ViddlerIo::Application.config.viddler_api_key)
   end
 end
