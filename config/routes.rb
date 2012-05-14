@@ -3,6 +3,7 @@ ViddlerIo::Application.routes.draw do
   resource :session
 
   match 'login' => 'sessions#new'
+  match 'logout' => 'sessions#destroy'
 
   root :to => 'pages#index'
 

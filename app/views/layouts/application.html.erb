@@ -11,11 +11,15 @@
       <div class="navbar-inner">
         <div class="container">
           <a class="brand" href="#">viddler.io</a>
-          <ul class="nav">
-            <li><%= link_to "Videos", videos_path %></li>
-            <li><%= link_to "Upload", new_video_path %></li>
-          </ul>
-
+          <% if @current_user %>
+            <ul class="nav">
+              <li><%= link_to "Videos", videos_path %></li>
+              <li><%= link_to "Upload", new_video_path %></li>
+            </ul>
+            <div class="pull-right">
+              <p class="navbar-text">Logged in a <strong><%= @current_user[:username] %></strong>. <%= link_to "Logout", logout_path %></p>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>

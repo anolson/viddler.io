@@ -16,13 +16,17 @@ class SessionsController < ApplicationController
     end
   end
   
+  def destroy
+    redirect_to_login
+  end
+
   private
   
   def force_sign_in
-    redirect_with_alert "Incorrect Username/Password"
+    redirect_to_login "Incorrect Username/Password"
   end
 
-  def redirect_with_alert(alert)
+  def redirect_to_login(alert = nil)
     reset_session
     redirect_to login_path, :alert => alert
   end
