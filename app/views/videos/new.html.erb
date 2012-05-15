@@ -1,10 +1,12 @@
-<h2>New video <small>upload a new video</small></h2>  
+<div class="row page-header">
+  <h1>Upload Video</h1>
+</div>
 
 <div class="well">
   <%= form_tag @upload.endpoint, :multipart => true do %>
-    <%= hidden_field_tag :token, @upload.token %>
+    <%= hidden_field_tag :uploadtoken, @upload.token %>
     
-    <%= hidden_field_tag :callback, videos_url %>
+    <%= hidden_field_tag :callback, callback_videos_url %>
     
     <%= label_tag :title %>
     <%= text_field_tag :title %>
@@ -12,11 +14,8 @@
     <%= label_tag :description %>
     <%= text_field_tag :description %>
     
-    <%= label_tag :tags %>
-    <%= text_field_tag :tags %>
-    
-    <%= label_tag :filename %>
-    <%= file_field_tag :filename %>
+    <%= label_tag :file %>
+    <%= file_field_tag :file %>
     
     <div class="form-actions">
       <%= submit_tag "Upload", :class => "btn-primary" %>
