@@ -1,25 +1,23 @@
 module VideosHelper
   def prev_page(page)
     if(page.to_i <= 1)
-      content_tag :li, :class => :disabled do
-        link_to "Prev", '#'
-      end
+      page("Prev", '#', true)
     else
-      content_tag :li do
-        link_to "Prev", videos_path(:page => page - 1)
-      end
+      page("Prev", videos_path(:page => page - 1))
     end
   end
   
   def next_page(page)
     if @videos.empty? 
-      content_tag :li, :class => :disabled do
-        link_to "Next", '#'
-      end
+      page("Next", '#', true)
     else
-      content_tag :li do
-        link_to "Next", videos_path(:page => page + 1)
-      end
+      page("Next", videos_path(:page => page + 1))
     end
-  end   
+  end
+  
+  def page(name, path, disabled = false)   
+    content_tag :li, (disabled && { :class => :disabled } )  do
+      link_to name, path
+    end  
+  end  
 end
