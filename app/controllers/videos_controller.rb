@@ -4,7 +4,8 @@ class VideosController < ApplicationController
   end
 
   def index
-    @videos = Video.find_all(current_user[:viddler_session_id])
+    @page = (params[:page] || 1).to_i
+    @videos = Video.page(current_user[:viddler_session_id], @page)
   end
 
   def show

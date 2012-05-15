@@ -1,9 +1,10 @@
+require 'pp'
 class Video < Model  
   attr_accessor :session_id, :description, :id, :thumbnail, :title, :url, :embed_code
   
-  def self.find_all(session_id)
-    videos = client.get('viddler.videos.getByUser', :sessionid => session_id)['list_result']['video_list']
-    
+  def self.page(session_id, page)
+    page = 1 unless page
+    videos = client.get('viddler.videos.getByUser', :sessionid => session_id, :page => page, :per_page => 1)['list_result']['video_list']
     videos.collect do |v|
       Video.new(:description => v['description'], :id => v['id'], :thumbnail => v['thumbnail_url'], :title => v['title'], :url => v['url'] )
     end
