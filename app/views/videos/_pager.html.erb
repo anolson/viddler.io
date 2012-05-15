@@ -1,0 +1,9 @@
+<% if @videos.size == @per_page %>
+  <div class="row">
+    <ul class="pager">
+      <%= prev_page @page %>
+      <%= next_page @page %>
+      <%= page "All", all_videos_path %>
+    </ul>
+  </div>
+<% end %>

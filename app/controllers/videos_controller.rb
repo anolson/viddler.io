@@ -4,8 +4,7 @@ class VideosController < ApplicationController
   end
 
   def index
-    @page = (params[:page] || 1).to_i
-    @videos = Video.page(current_user[:viddler_session_id], @page)
+    @videos = Video.page(current_user[:viddler_session_id], page, per_page)
   end
 
   def show
@@ -19,5 +18,20 @@ class VideosController < ApplicationController
   
   def callback
     redirect_to video_path(:id => params[:videoid])
+  end
+
+  def all
+    @videos = Video.all(current_user[:viddler_session_id])
+    render :index
+  end
+
+  private
+
+  def page
+    @page = (params[:page] || 1).to_i
+  end
+
+  def per_page
+    @per_page = 10
   end
 end

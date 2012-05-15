@@ -10,12 +10,7 @@
     <ul class="thumbnails">
       <%= render :partial => 'video', :collection => @videos %>
     </ul>
-  <% end %>  
+  <% end %>
+</div>
 
-</div>
-<div class="row">
-  <ul class="pager">
-    <%= prev_page @page %>
-    <%= next_page @page %>
-  </ul>
-</div>
+<%= render :partial => 'pager' %>
