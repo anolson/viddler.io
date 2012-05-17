@@ -4,9 +4,9 @@ A Rails (3.2) application that demos some features of Viddler[http://developers.
 
 == Getting started
 
-Clone the source.
+Clone the source and install dependencies.
 
-  $ git clone https://github.com/anolson/viddler.io
+  $ git clone git://github.com/anolson/viddler.io.git
   $ cd viddler.io
   $ bundle
   
