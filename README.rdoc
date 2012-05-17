@@ -1,6 +1,6 @@
 == viddler.io
 
-A Rails (3.2) to demo some features of Viddler[http://developers.viddler.com/]
+A Rails (3.2) application that demos some features of Viddler[http://developers.viddler.com/]
 
 == Getting started
 
